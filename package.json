@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "rolldown-build": "rolldown -c rolldown.config.js",
+    "rolldown-build": "rolldown -c rolldown.config.ts",
     "vite-build": "vite build"
   },
   "devDependencies": {
