@@ -1,0 +1,15 @@
+{
+  "name": "rolldown-vite-dts-star-paths",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "rolldown-build": "rolldown -c rolldown.config.js",
+    "vite-build": "vite build"
+  },
+  "devDependencies": {
+    "rolldown": "1.0.0-rc.12",
+    "rolldown-plugin-dts": "0.23.1",
+    "typescript": "6.0.2",
+    "vite": "8.0.3"
+  }
+}
