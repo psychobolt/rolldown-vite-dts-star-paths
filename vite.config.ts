@@ -6,24 +6,24 @@ export default defineConfig({
     lib: {
       entry: {
         'index': 'src/index.ts',
-        'Button/index': 'src/Button/index.ts',
-        'Header/index': 'src/Header/index.ts',
+        // 'Button/index': 'src/Button/index.ts',
+        // 'Header/index': 'src/Header/index.ts',
       },
       formats: ['es'],
     },
     rolldownOptions: {
       plugins: [dts()],
-      output: {
-        codeSplitting: {
-          groups: [
-            {
-              name(id) {
-                return id.replace(/^(.*src)[/\\]/, '').replace('.ts', '');
-              },
-            },
-          ],
-        }
-      }
+      // output: {
+      //   codeSplitting: {
+      //     groups: [
+      //       {
+      //         name(id) {
+      //           return id.replace(/^(.*src)[/\\]/, '').replace('.ts', '');
+      //         },
+      //       },
+      //     ],
+      //   }
+      // }
     }
   }
 });
