@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rolldown:
+    strategy:
+      matrix:
+        builder: ['rolldown', 'vite']
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - if: matrix.os == 'ubuntu-latest'
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        with:
+          node-version: 22.x
+          cache: 'npm'
+      - run: npm install
+      - run: npm run ${{ matrix.builder }}-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.builder }}-build-dist-${{ matrix.os }}
+          path: dist
+
+    
+    
